@@ -1,26 +1,41 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import BoardContainer from './components/BoardContainer'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BoardContainer boards={data}/>
     </div>
   );
 }
+
+let data = [
+  {
+    name: "Wishlist",
+    jobs: [],
+    id: 1
+  },
+  {
+    name: "Applied",
+    jobs: [],
+    id: 2
+  },
+  {
+    name: "Interview",
+    jobs: [],
+    id: 3
+  },
+  {
+    name: "Offer",
+    jobs: [],
+    id: 4
+  },
+  {
+    name: "Rejected",
+    jobs: [],
+    id: 5
+  },
+]
 
 export default App;
