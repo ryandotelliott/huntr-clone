@@ -1,12 +1,11 @@
 import React, { Component } from 'react'
-import './BoardStyles.css'
 import Board from './Board'
 
 export default class BoardContainer extends Component {
     mapBoards = () => {
         return (
             this.props.boards.map((board) => (
-            <Board name={board.name} jobs={board.jobs} />
+                <Board key={board.id} name={board.name} jobs={board.jobs} />
             )));
         }
 

@@ -1,7 +1,14 @@
 import React, { Component } from 'react'
-import './BoardStyles.css'
+import Card from './Card'
 
 export default class Board extends Component {
+    loadCards = () => {
+        return (
+            this.props.jobs.map((card) => (
+                <Card key={card.id} name={card.company} position={card.position} />
+            )));
+        }
+
     render() {
         return (
             <div className="board">
@@ -10,9 +17,12 @@ export default class Board extends Component {
                     {this.props.jobs.length} JOBS
                 </p>
 
-                <div className="add-card-button">
+                <button className="add-card-button" onClick={this.createCard}>
                     +
-                </div>
+                </button>
+
+                {this.loadCards()}
+
             </div>
         )
     }

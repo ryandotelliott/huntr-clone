@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './BoardStyles.css';
 import BoardContainer from './components/BoardContainer'
 
 function App() {
@@ -13,7 +13,23 @@ function App() {
 let data = [
   {
     name: "Wishlist",
-    jobs: [],
+    jobs: [
+      {
+        company: "Google",
+        position: "Intern",
+        id: 1
+      },
+      {
+        company: "Microsoft",
+        position: "Intern",
+        id: 2
+      },
+      {
+        company: "Facebook",
+        position: "Intern",
+        id: 3
+      }
+    ],
     id: 1
   },
   {
