@@ -17,16 +17,19 @@ let data = [
       {
         company: "Google",
         position: "Intern",
+        boardId: 1,
         id: 1
       },
       {
         company: "Microsoft",
         position: "Intern",
+        boardId: 1,
         id: 2
       },
       {
         company: "Facebook",
         position: "Intern",
+        boardId: 1,
         id: 3
       }
     ],
