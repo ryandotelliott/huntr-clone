@@ -2,12 +2,21 @@ import React, { Component } from 'react'
 import Card from './Card'
 
 export default class Board extends Component {
+    constructor (props) {
+        super(props);
+        this.state = {
+            jobs: props.jobs,
+        };
+    }
+
+
     loadCards = () => {
         return (
-            this.props.jobs.map((card) => (
+            this.state.jobs.map((card) => (
                 <Card key={card.id} name={card.company} position={card.position} />
-            )));
-        }
+            ))
+        );
+    }
 
     render() {
         return (
@@ -17,12 +26,11 @@ export default class Board extends Component {
                     {this.props.jobs.length} JOBS
                 </p>
 
-                <button className="add-card-button" onClick={this.createCard}>
+                <button className="add-card-button" onClick={() => this.props.renderModal(this.props.id)}>
                     +
                 </button>
 
                 {this.loadCards()}
-
             </div>
         )
     }
