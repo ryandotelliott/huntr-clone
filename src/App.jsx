@@ -1,6 +1,6 @@
 import React from 'react';
-import './BoardStyles.css';
 import BoardContainer from './components/BoardContainer'
+import './styles.css';
 
 function App() {
   return (
