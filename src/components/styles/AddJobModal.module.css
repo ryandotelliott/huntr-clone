@@ -1,0 +1,44 @@
+.container {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(31, 31, 31, 0.5);
+}
+
+.modal {
+    background-color: white;
+    box-shadow: 0px 1px 3px rgba(25,4,69,0.5);
+    border-radius: 7px;
+    height: 225px;
+    width: 325px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    box-sizing: border-box;
+}
+
+.modal > * {
+    margin-top: 10px;
+}
+
+.company, .position, .boardId {
+    height: 30px;
+    width: 100%;
+    padding: 5px;
+    -webkit-box-sizing: content-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: content-box;    /* Firefox, other Gecko */
+    box-sizing: content-box;         /* Opera/IE 8+ */
+}
+
+.add-button {
+    width: 50%;
+    height: 30px;
+    padding: 5px;
+}
