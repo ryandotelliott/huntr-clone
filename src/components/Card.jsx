@@ -1,17 +1,13 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import styles from './styles/Card.module.css';
 
 export default class Card extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {};
-    }
-
     render() {
         return (
-            <div className="job-card">
-                <p className="job-company">{this.props.name}</p>
-                <p className="job-position">{this.props.position}</p>
+            <div className={styles.card}>
+                <p className={styles.company}>{this.props.company}</p>
+                <p className={styles.position}>{this.props.position}</p>
             </div>
-        )
+        );
     }
 }

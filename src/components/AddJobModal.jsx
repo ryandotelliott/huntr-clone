@@ -1,19 +1,21 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import styles from './styles/AddJobModal.module.css';
 
 export default class AddComponentModal extends Component {
     constructor (props) {
         super(props)
         this.state = {
-            selected: props.activeBoard
+            'boardId': props.activeBoard
         }
     }
 
     handleChange = (e) => {
-        this.setState({selected: e.target.value})
+        this.setState({[e.target.name]: e.target.value});
     }
 
     handleSubmit = (e) => {
         e.preventDefault();
+        this.props.addJob(this.state);
     }
 
     addModalOptions = () => (
@@ -24,21 +26,35 @@ export default class AddComponentModal extends Component {
 
     render() {
         return (
-            <div className="add-job-modal">
-                <label htmlFor="company-input">Company</label>
-                <input type="text" id="company-input" name="company-input" />
-
-                <label htmlFor="position-input">Position</label>
-                <input type="text" id="position-input" name="position-input" />
-
-                <form onSubmit={this.handleSubmit}>
-                    <select name="board_name" id="board-selection" value={this.state.selected} onChange={this.handleChange}>
-                        {this.addModalOptions()}
-                    </select>
-                    <input type="submit" value="Add" />
+            <div className={styles.container}>
+                <form className={styles.modal} onSubmit={this.handleSubmit}>
+                        <input
+                            name="company"
+                            type="text"
+                            className={styles.company}
+                            placeholder="Company"
+                            onChange={this.handleChange}
+                            autoComplete="off"
+                        />
+                        <input
+                            name="position"
+                            type="text"
+                            className={styles.position}
+                            placeholder="Position"
+                            onChange={this.handleChange}
+                            autoComplete="off"
+                        />
+                        <select
+                            name="boardId"
+                            className={styles.boardId}
+                            value={this.state['boardId']}
+                            onChange={this.handleChange}
+                        >
+                            {this.addModalOptions()}
+                        </select>
+                        <input type="submit" value="Add" className="add-button" />
                 </form>
-
             </div>
-        )
+        );
     }
 }
